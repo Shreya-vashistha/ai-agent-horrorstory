@@ -1,0 +1,30 @@
+{
+  "name": "horror-story-server",
+  "version": "1.0.0",
+  "description": "AI Horror Story Generator using GROQ API",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --env-file=.env server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "mern",
+    "openai",
+    "ai-agent",
+    "horror-story"
+  ],
+  "author": "Shreya Vashistha",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.18.2",
+    "groq-sdk": "^1.1.1",
+    "mongoose": "^8.23.0",
+    "openai": "^4.57.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

@@ -1,0 +1,255 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: "Inter", sans-serif;
+  background: radial-gradient(circle at top, #0a0a0a, #000);
+  color: #e5e5e5;
+}
+
+/* LAYOUT */
+.layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: #0b0b0b;
+  border-right: 1px solid #1f1f1f;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.newChat {
+  padding: 10px;
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.newChat:hover {
+  background: #1a1a1a;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+}
+
+
+.sidebar__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #111;
+  margin: 5px 0;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+.sidebar__item:hover {
+  background: #1a1a1a;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+}
+
+.sidebar__item.active {
+  border: 1px solid red;
+}
+
+.sidebar__text {
+  flex: 1;
+}
+/* MAIN UI */
+.ui {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #000;
+}
+
+/* TOP BAR */
+.topbar {
+  display: flex;
+  gap: 10px;
+  padding: 12px 20px;
+  border-bottom: 1px solid #1f1f1f;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+/* BUTTONS */
+.topbar button {
+  padding: 8px 14px;
+  background: #111;
+  border: 1px solid #333;
+  color: #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.topbar button:hover {
+  background: #1a1a1a;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+}
+
+/* CHAT AREA */
+.chat {
+  flex: 1;
+  padding: 25px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* USER MESSAGE */
+.user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #222, #111);
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin: 8px 0;
+  max-width: 60%;
+  font-size: 14px;
+  border: 1px solid #333;
+}
+
+/* BOT MESSAGE */
+.bot {
+  align-self: flex-start;
+  background: linear-gradient(135deg, #111, #050505);
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin: 8px 0;
+  max-width: 60%;
+  font-size: 14px;
+  border: 1px solid #222;
+
+  /* subtle glow */
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.1);
+}
+
+.inputArea {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #222;
+  background-color: #111;
+  gap: 10px;
+}
+
+.inputArea textarea {
+  flex: 1;
+  background-color: #0a0a0a;
+  color: #f0f0f0;
+  border: 1px solid #222;
+  border-radius: 6px;
+  padding: 8px;
+  resize: none;
+  font-family: 'Courier New', monospace;
+}
+
+.inputArea textarea:focus {
+  outline: none;
+  border-color: #555;
+}
+
+.inputArea button {
+  background-color: red;
+  border: none;
+  color: #f0f0f0;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.inputArea button:hover {
+  background-color: red;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+}
+/* CURSOR BLINK */
+.cursor {
+  display: inline-block;
+  margin-left: 3px;
+  animation: blink 1s infinite;
+  color: red;
+}
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* SCROLLBAR */
+.chat::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 10px;
+}
+
+/* HOVER GLOW EFFECT */
+.bot:hover {
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .layout {
+    flex-direction: column;
+  }
+
+  .user, .bot {
+    max-width: 90%;
+  }
+}
+
+.deleteBtn {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  color: red;
+}
+
+/* CHAR COUNT */
+.charCount {
+  font-size: 11px;
+  color: #777;
+  text-align: right;
+}
+
+.charCount.warning {
+  color: red;
+}
+
+
+button {
+  padding: 10px;
+}
+.footer {
+  padding: 8px 12px;
+  text-align: center;
+  font-size: 12px;
+  border-top: 1px solid #222;
+  background-color: #111;
+  color: #888;
+}

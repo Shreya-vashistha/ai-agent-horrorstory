@@ -1,0 +1,35 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050608;
+  overflow: hidden;
+}
+
+/* MAIN */
+.app {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 30% 20%, #0a0b10, #050608, #160005);
+  background-size: 200% 200%;
+  transition: background-position 0.2s;
+}
+
+.app > * {
+  position: relative;
+}
+
+.app::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 45% at 70% 30%, rgba(255, 43, 43, 0.08), transparent 60%),
+    radial-gradient(40% 35% at 20% 80%, rgba(0, 255, 159, 0.05), transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
